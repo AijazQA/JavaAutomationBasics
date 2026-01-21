@@ -7,6 +7,7 @@ public class QuickSort{
         QuickSort qs=new QuickSort();
         //call of recursive function through main class object qs
         qs.quickSortRecursion(arr, 0, leng-1);
+        //call of print method of sorted array
         qs.printArray(arr);
     }
 
@@ -62,4 +63,5 @@ public class QuickSort{
         System.out.println();
     }
 }
+
 
