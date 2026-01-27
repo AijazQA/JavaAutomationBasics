@@ -1,0 +1,50 @@
+import java.time.LocalDateTime;
+
+public class SocialNetworkMain {
+    public static void main(String[] args) {
+        // 1. Create a User
+        User user1 = new User();
+        user1.setUserId(101);
+        user1.setUsername("JavaDev2026");
+        user1.setEmail("dev@example.com");
+        user1.setBio("Building the future of social tech.");
+
+        // 2. Create a Post for that User
+        Post firstPost = new Post();
+        firstPost.setPostId(5001);
+        firstPost.setAuthorId(user1.getUserId());
+        firstPost.setContent("Just finished my Java project classes!");
+        firstPost.setTimestamp(LocalDateTime.now());
+        firstPost.setLikeCount(0);
+
+        // 3. Simulate another user commenting on the post
+        User user2 = new User();
+        user2.setUserId(102);
+        user2.setUsername("CodeLearner");
+
+        Comment userComment = new Comment();
+        userComment.setCommentId(901);
+        userComment.setPostId(firstPost.getPostId());
+        userComment.setAuthorId(user2.getUserId());
+        userComment.setText("Great work! The getters and setters look clean.");
+        userComment.setCreatedAt(LocalDateTime.now());
+
+        // 4. Create a Notification for the first user
+        Notification postNotif = new Notification();
+        postNotif.setNotificationId(1);
+        postNotif.setTargetUserId(user1.getUserId());
+        postNotif.setType("COMMENT");
+        postNotif.setMessage(user2.getUsername() + " commented on your post.");
+        postNotif.setSeen(false);
+
+        // 5. Display the simulated data using Getters
+        System.out.println("--- SOCIAL NETWORK FEED ---");
+        System.out.println("User: " + user1.getUsername());
+        System.out.println("Post: " + firstPost.getContent());
+        System.out.println("New Comment by " + user2.getUsername() + ": " + userComment.getText());
+        System.out.println("\n--- NOTIFICATIONS ---");
+        if (!postNotif.isSeen()) {
+            System.out.println("[NEW] " + postNotif.getMessage());
+        }
+    }
+}

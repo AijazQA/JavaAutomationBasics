@@ -1,0 +1,23 @@
+public class Notification {
+    private int notificationId;
+    private int targetUserId;
+    private String type; // e.g., "LIKE", "COMMENT", "REQUEST"
+    private String message;
+    private boolean seen;
+
+    // Getters and Setters
+    public int getNotificationId() { return notificationId; }
+    public void setNotificationId(int notificationId) { this.notificationId = notificationId; }
+
+    public int getTargetUserId() { return targetUserId; }
+    public void setTargetUserId(int targetUserId) { this.targetUserId = targetUserId; }
+
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+
+    public String getMessage() { return message; }
+    public void setMessage(String message) { this.message = message; }
+
+    public boolean isSeen() { return seen; }
+    public void setSeen(boolean seen) { this.seen = seen; }
+}

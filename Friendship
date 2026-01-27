@@ -1,0 +1,15 @@
+public class Friendship {
+    private int userOneId;
+    private int userTwoId;
+    private String status; // e.g., "Pending", "Accepted"
+
+    // Getters and Setters
+    public int getUserOneId() { return userOneId; }
+    public void setUserOneId(int userOneId) { this.userOneId = userOneId; }
+
+    public int getUserTwoId() { return userTwoId; }
+    public void setUserTwoId(int userTwoId) { this.userTwoId = userTwoId; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+}
